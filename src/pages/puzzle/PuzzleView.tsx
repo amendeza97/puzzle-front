@@ -20,7 +20,6 @@ export const PuzzleView: FC = (): JSX.Element => {
 
   const moveImage = useCallback(
     (id: string, left: number, top: number) => {
-      console.log(JSON.stringify({id, top, left}), null, 2)
       setPictures(
         update(pictures, {
           [id]: {
@@ -37,7 +36,7 @@ export const PuzzleView: FC = (): JSX.Element => {
       setPictures(
         update(pictures, {
           [id]: {
-            $merge: { rotate },
+            $merge: { rotate, left: pictures[id].left + 1, top: pictures[id].top + 1 },
           },
         }),
       );
@@ -50,9 +49,9 @@ export const PuzzleView: FC = (): JSX.Element => {
       accept: ItemTypes.IMAGE,
       drop(item: any, monitor) {
         const delta = monitor.getDifferenceFromInitialOffset() as any;
-        const left = Math.round(item.left + delta.x)
-        const top = Math.round(item.top + delta.y)
-        moveImage(item.id, left, top)
+        const left = Math.round(item.left + delta.x);
+        const top = Math.round(item.top + delta.y);
+        moveImage(item.id, left, top);
         return undefined
       },
     }),

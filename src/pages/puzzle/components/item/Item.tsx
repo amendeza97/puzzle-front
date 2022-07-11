@@ -20,14 +20,14 @@ export const Item: FC<ItemProps> = ({id, left, top, children}): JSX.Element => {
       item: { id, left, top },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
-        backgroundColor: 'transparent'
       }),
     }),
     [id, left, top],
   );
 
   useEffect(() => {
-    dragPreview(getEmptyImage())
+    dragPreview(getEmptyImage());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isDragging) {

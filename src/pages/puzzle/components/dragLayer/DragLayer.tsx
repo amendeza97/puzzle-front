@@ -20,8 +20,9 @@ export const DragLayer: FC<{children?: JSX.Element}> = ({children}) => {
       position: 'fixed',
       top: 0,
       left: 0,
+      pointerEvents: 'none',
     }}>
-        <img src={Images[item.id].image} style={{zIndex: 1000}} alt={`puuzle-piece-${item.id}-prev`} />
+        <img src={Images[item.id].image} alt={`puuzle-piece-${item.id}-prev`} />
       </div> 
       : null;
 };

@@ -20,6 +20,7 @@ export const PuzzleView: FC = (): JSX.Element => {
 
   const moveImage = useCallback(
     (id: string, left: number, top: number) => {
+      console.log(JSON.stringify({id, top, left}), null, 2)
       setPictures(
         update(pictures, {
           [id]: {
@@ -78,25 +79,23 @@ export const PuzzleView: FC = (): JSX.Element => {
       {Object.keys(pictures).map((key) => {
         const {left, top, image, label, rotate} = pictures[key];
         return (
-          <>
-            <Item
-              key={key}
-              id={key}
-              left={left}
-              top={top}
-            >
-              <div className='wrapperItem'>
-                <img src={image} style={{transform: `rotate(${rotate}deg)`}} alt={`puuzle-piece-${key}`} />
-                {showLabel && <button
-                  className='buttonRotateImage'
-                  onClick={() => handleOnRotateImageClick(key)}
-                  >
-                    <img className='rotateImage' src={Rotate} alt='rotate' />  
-                </button>}
-                {showLabel && <p className='label'>{label}</p>}
-              </div>
-            </Item>
-          </>
+          <Item
+            key={key}
+            id={key}
+            left={left}
+            top={top}
+          >
+            <div className='wrapperItem'>
+              <img src={image} style={{transform: `rotate(${rotate}deg)`}} alt={`puuzle-piece-${key}`} />
+              {showLabel && <button
+                className='buttonRotateImage'
+                onClick={() => handleOnRotateImageClick(key)}
+                >
+                  <img className='rotateImage' src={Rotate} alt='rotate' />  
+              </button>}
+              {showLabel && <p className='label'>{label}</p>}
+            </div>
+          </Item>
         )
       })}
       <DragLayer />

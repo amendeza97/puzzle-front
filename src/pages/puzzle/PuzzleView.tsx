@@ -4,7 +4,7 @@ import update from 'immutability-helper';
 
 import {StylesContainer} from './styles';
 import {ItemTypes, Images} from './constants';
-import {Item} from './components';
+import {Item, DragLayer} from './components';
 import {Image} from './models';
 import Rotate from '../../assets/icons/rotate.png';
 import View from '../../assets/icons/view.png';
@@ -78,25 +78,28 @@ export const PuzzleView: FC = (): JSX.Element => {
       {Object.keys(pictures).map((key) => {
         const {left, top, image, label, rotate} = pictures[key];
         return (
-          <Item
-            key={key}
-            id={key}
-            left={left}
-            top={top}
-          >
-            <div className='wrapperItem'>
-              <img src={image} style={{transform: `rotate(${rotate}deg)`}} alt={`puuzle-piece-${key}`} />
-              {showLabel && <button
-                className='buttonRotateImage'
-                onClick={() => handleOnRotateImageClick(key)}
-                >
-                  <img className='rotateImage' src={Rotate} alt='rotate' />  
-              </button>}
-              {showLabel && <p className='label'>{label}</p>}
-            </div>
-          </Item>
+          <>
+            <Item
+              key={key}
+              id={key}
+              left={left}
+              top={top}
+            >
+              <div className='wrapperItem'>
+                <img src={image} style={{transform: `rotate(${rotate}deg)`}} alt={`puuzle-piece-${key}`} />
+                {showLabel && <button
+                  className='buttonRotateImage'
+                  onClick={() => handleOnRotateImageClick(key)}
+                  >
+                    <img className='rotateImage' src={Rotate} alt='rotate' />  
+                </button>}
+                {showLabel && <p className='label'>{label}</p>}
+              </div>
+            </Item>
+          </>
         )
-    })}
+      })}
+      <DragLayer />
       </div>
     </StylesContainer>
   );

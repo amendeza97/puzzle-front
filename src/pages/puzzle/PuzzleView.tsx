@@ -84,6 +84,7 @@ export const PuzzleView: FC = (): JSX.Element => {
             id={key}
             left={left}
             top={top}
+            rotate={rotate}
           >
             <div className='wrapperItem'>
               <img src={image} style={{transform: `rotate(${rotate}deg)`}} alt={`puuzle-piece-${key}`} />

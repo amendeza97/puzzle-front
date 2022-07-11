@@ -22,7 +22,7 @@ export const DragLayer: FC<{children?: JSX.Element}> = ({children}) => {
       left: 0,
       pointerEvents: 'none',
     }}>
-        <img src={Images[item.id].image} alt={`puuzle-piece-${item.id}-prev`} />
+        <img src={Images[item.id].image} style={{transform: `rotate(${item.rotate}deg)`}}  alt={`puuzle-piece-${item.id}-prev`} />
       </div> 
       : null;
 };

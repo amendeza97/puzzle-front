@@ -9,15 +9,16 @@ export type ItemProps = {
   id: string;
   left: number;
   top: number;
+  rotate: number;
   children: JSX.Element;
 };
 
-export const Item: FC<ItemProps> = ({id, left, top, children}): JSX.Element => {
+export const Item: FC<ItemProps> = ({id, left, top, rotate, children}): JSX.Element => {
 
   const [{isDragging}, drag, dragPreview] = useDrag(
     () => ({
       type: ItemTypes.IMAGE,
-      item: { id, left, top },
+      item: { id, left, top, rotate },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),

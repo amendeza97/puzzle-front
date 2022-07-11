@@ -1,6 +1,5 @@
 {
   "name": "puzzle",
-  "homepage": "https://amendeza97.github.io/puzzle-front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +10,6 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "gh-pages": "^4.0.0",
     "immutability-helper": "^3.1.1",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
@@ -27,8 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build", 
+    "predeploy": "yarn build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

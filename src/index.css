@@ -3,7 +3,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ojdo.de%2Fwp%2Fwp-content%2Fuploads%2Fngg_featured%2Fwhite-wave-1038x576.jpg&f=1&nofb=1");
+  background-image: url("./assets/images/Background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

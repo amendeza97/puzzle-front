@@ -18,7 +18,6 @@ export const StylesContainer = styled.div`
     margin-right: 10px;
     border-radius: 20px;
     border: 2px solid transparent;
-    box-shadow: 5px 5px 5px #dcdcdc;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -36,7 +36,7 @@ export const PuzzleView: FC = (): JSX.Element => {
       setPictures(
         update(pictures, {
           [id]: {
-            $merge: { rotate, left: pictures[id].left + 1, top: pictures[id].top + 1 },
+            $merge: { rotate, left: pictures[id].left + 1, top: pictures[id].top },
           },
         }),
       );

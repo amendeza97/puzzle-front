@@ -6,7 +6,7 @@ import {Puzzle} from '../pages';
 export const Router: FC = (): JSX.Element => (
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Puzzle />} />
+      <Route path="/" element={<Puzzle />} />
     </Routes>
   </BrowserRouter>
 );

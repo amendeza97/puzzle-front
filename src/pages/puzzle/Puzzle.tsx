@@ -9,4 +9,4 @@ export const Puzzle: FC = (): JSX.Element => {
       <PuzzleView />
     </DNDContainer>
   );
-}
+};

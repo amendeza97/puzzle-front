@@ -13,17 +13,22 @@ export type ItemProps = {
   children: JSX.Element;
 };
 
-export const Item: FC<ItemProps> = ({id, left, top, rotate, children}): JSX.Element => {
-
+export const Item: FC<ItemProps> = ({
+  id,
+  left,
+  top,
+  rotate,
+  children,
+}): JSX.Element => {
   const [{isDragging}, drag, dragPreview] = useDrag(
     () => ({
       type: ItemTypes.IMAGE,
-      item: { id, left, top, rotate },
+      item: {id, left, top, rotate},
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
     }),
-    [id, left, top],
+    [id, left, top]
   );
 
   useEffect(() => {
@@ -32,7 +37,7 @@ export const Item: FC<ItemProps> = ({id, left, top, rotate, children}): JSX.Elem
   }, []);
 
   if (isDragging) {
-    return <div ref={drag} />
+    return <div ref={drag} />;
   }
 
   return (
@@ -44,5 +49,5 @@ export const Item: FC<ItemProps> = ({id, left, top, rotate, children}): JSX.Elem
     >
       {children}
     </Container>
-  )
-}
+  );
+};

@@ -4,4 +4,4 @@ export type Image = {
   image: string;
   rotate: number;
   label: string;
-}
+};
